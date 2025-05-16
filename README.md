@@ -15,6 +15,8 @@ The goal of this research is to provide an automated and ML-aware approach for d
 ## ⚙️ Methodology Overview
 
 Our methodology consists of three structured phases:
+![Methodology Overview](General Pipeline Overview.jpg)  
+
 
 ### 1. LLM-Based Layered Architecture and ML Pipeline Identification
 
@@ -24,9 +26,6 @@ We perform a two-dimensional structural decomposition of the monolithic codebase
 - *Horizontal decomposition*: Classifies classes into layers such as User Interface, Business Logic, and Data Access.
 - ML-related classes are further categorized into core pipeline stages: data preprocessing, model training, evaluation, and deployment.
 
-📌 *Placeholder for image:*  
-![LLM-Based Architecture Analysis](images/llm_architecture_analysis.png)  
-*A conceptual illustration of LLM-guided classification across architectural layers and ML pipeline stages.*
 
 ---
 
@@ -34,19 +33,12 @@ We perform a two-dimensional structural decomposition of the monolithic codebase
 
 Identified classes are transformed into high-dimensional semantic embeddings using **CodeBERT**, capturing both syntax and contextual semantics of the source code. This results in a rich embedding matrix informed by both code structure and architectural classification.
 
-📌 *Placeholder for image:*  
-![Code Embedding Process](images/codebert_embeddings.png)  
-*Visualization of code-to-embedding transformation using CodeBERT.*
-
 ---
 
 ### 3. Clustering and Microservice Candidate Identification
 
 We apply **HDBSCAN**, a density-based clustering algorithm, to group similar classes. Each cluster represents a potential microservice. Clusters are validated using ML architectural principles to ensure they map logically to functional modules.
 
-📌 *Placeholder for image:*  
-![Clustering Output](images/hdbscan_clusters.png)  
-*Example clustering of embeddings into modular microservice candidates.*
 
 ---
 
